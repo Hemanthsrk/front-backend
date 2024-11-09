@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Hemanthsrk/front-backend.git'
+                checkout scmGit(branches: [[name: '*/min']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/Hemanthsrk/front-backend.git']])
             }
         }
 
